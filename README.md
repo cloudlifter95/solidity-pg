@@ -8,3 +8,8 @@ Code is inspired, copied, reworked from different sources, such as:
 - https://github.com/smartcontractkit/full-blockchain-solidity-course-js?tab=readme-ov-file#lesson-2-welcome-to-remix-simple-storage
 
 
+# deployment help section
+```bash
+yarn add solc
+yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o ./out/ SimpleStorage.sol 
+```
