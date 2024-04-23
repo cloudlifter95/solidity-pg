@@ -13,3 +13,6 @@ Code is inspired, copied, reworked from different sources, such as:
 yarn add solc
 yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o ./out/ SimpleStorage.sol 
 ```
+
+# Chain used
+Sepolia ETH. Connecting with endpoint from Alchemy
