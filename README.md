@@ -15,6 +15,12 @@ yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o ./out/ Sim
 node deploy.js
 ```
 
+# Prettier reference config
+`yarn add --dev prettier prettier-plugin-solidity`
+.prettierrc is used for the configuration of prettier.
+.prettierignore to ignore.
+
+
 # Deployment with Hardhat
 yarn hardhat compile
 
