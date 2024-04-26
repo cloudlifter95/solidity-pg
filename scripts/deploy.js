@@ -1,4 +1,7 @@
-const { ethers } = require("hardhat");
+const { ethers, network } = require("hardhat");
+const networkName = network.name;
+const chainId = network.config.chainId;
+
 
 async function main() {
     await deployContract("SimpleStorage");
@@ -14,9 +17,9 @@ main()
 
 async function deployContract(ContractName) {
     const ContractFactory = await ethers.getContractFactory(ContractName);
-    console.log(`Deploying contract ${ContractName} ...`);
+    console.log(`[${networkName}-${chainId}] Deploying contract ${ContractName} ...`);
     const contract = await ContractFactory.deploy();
     await contract.waitForDeployment();
     const address = await contract.getAddress();
-    console.log(`Contract ${ContractName} deployed to: ${address}`);
+    console.log(`[${networkName}-${chainId}] Contract ${ContractName} deployed to: ${address}`);
 }
