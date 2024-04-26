@@ -22,7 +22,15 @@ node deploy.js
 
 
 # Deployment with Hardhat
+### Compile
 yarn hardhat compile
+### run deploy.js
+yarn hardhat run scripts/deploy.js [--network hardhat] //Deploys to in-process hardhat network.
+yarn hardhat run scripts/deploy.js --network Sepolia //Deploys to ETH testnet Sepolia.
 
 # Chain used
 Sepolia ETH. Connecting with endpoint from Alchemy
+
+
+# Documentation
+https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers

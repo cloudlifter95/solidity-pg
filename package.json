@@ -8,7 +8,7 @@
     "solc": "^0.8.25"
   },
   "scripts": {
-    "compile": "yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o ./out/ SimpleStorage.sol"
+    "legacy_compile": "yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o ./out/ SimpleStorage.sol"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
