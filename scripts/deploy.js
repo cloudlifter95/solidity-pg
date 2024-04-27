@@ -3,8 +3,10 @@ const networkName = network.name;
 const chainId = network.config.chainId;
 
 async function main() {
-    contracts = ["SimpleStorage", "FundMe"];
+    contracts = ["SimpleStorage", "FundMe"]; //contracts = ["SimpleStorage", "FundMe"];
+    contracts_map = {};
     for (const c of contracts) {
+        console.log(c);
         contract = await deployContract(c);
         if (
             network.config.chainId === 11155111 &&
@@ -16,15 +18,24 @@ async function main() {
             await contract.deploymentTransaction().wait(6);
             await verify(contract.target, []);
         }
+        contracts_map[c] = contract;
     }
+    console.log("---------------------------------------------------------");
+    console.log("Contracts map:");
+    console.log(contracts_map);
+    console.log("---------------------------------------------------------");
+    // SimpleStorage contract interaction
+    // ---
+    const { SimpleStorage: simpleStorage } = contracts_map;
 
-    if (network.config.chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
-        console.log(
-            `[${networkName}-${chainId}] Waiting for block confirmations...`,
-        );
-        await contract.deploymentTransaction().wait(6);
-        await verify(contract.target, []);
-    }
+    const currentValue = await simpleStorage.retrieve();
+    console.log(`Current value is: ${currentValue}`);
+
+    const transactionResponse = await simpleStorage.store(2);
+    await transactionResponse.wait(1);
+    console.log(`Updated value is: ${await simpleStorage.retrieve()}`);
+
+    // ----
 }
 
 main()
