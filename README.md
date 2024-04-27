@@ -22,6 +22,8 @@ Table of content:
     - [Compile](#compile)
     - [run deploy.js](#run-deployjs)
       - [localhost network](#localhost-network)
+    - [Debugging](#debugging)
+    - [Clean](#clean)
 - [Chain used](#chain-used)
 - [Documentation](#documentation)
 -------------------------------------------------------
@@ -61,6 +63,17 @@ you need to have nvm installed.
 `yarn hardhat node`
 
 `yarn hardhat run scripts/deploy.js --network localhost` //Deploys to localhost testnet.
+
+
+### Debugging
+console: `yarn hardhat console --network localhost`
+
+load js module: `.load ./scripts/deploy.js`
+
+function from deploy.js as example: `getTransactionFromTxHash('0x0f563feef2b7fa9b87fb50390457483b201707bb13450079681d7db1a3d36184')`
+
+### Clean
+`yarn hardhat clean`
 
 # Chain used
 Sepolia ETH. Connecting with endpoint from Alchemy (https://www.alchemy.com/chain-connect/endpoints/rpc-sepolia-sepolia)

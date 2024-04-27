@@ -38,13 +38,14 @@ async function main() {
     // ----
 }
 
-main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
-
+if (require.main === module) {
+    main()
+        .then(() => process.exit(0))
+        .catch((error) => {
+            console.error(error);
+            process.exit(1);
+        });
+}
 async function verify(contractAddress, args) {
     console.log(
         `[${networkName}-${chainId}] Verifying contract ${contractAddress}`,
@@ -75,4 +76,18 @@ async function deployContract(ContractName) {
         `[${networkName}-${chainId}] Contract ${ContractName} deployed to: ${address}`,
     );
     return contract;
+}
+
+async function getTransactionFromTxHash(transactionHash) {
+    const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
+
+    // Get transaction details
+    provider
+        .getTransaction(transactionHash)
+        .then((transaction) => {
+            console.log("Transaction details:", transaction);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 }
