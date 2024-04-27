@@ -21,7 +21,7 @@ async function main() {
         contracts_map[c] = contract;
     }
     console.log("---------------------------------------------------------");
-    console.log("Contracts map:");
+    console.log("Deployed contracts map:");
     console.log(contracts_map);
     console.log("---------------------------------------------------------");
     // SimpleStorage contract interaction
