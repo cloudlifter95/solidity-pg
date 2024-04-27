@@ -21,6 +21,7 @@ Table of content:
     - [help](#help)
     - [Compile](#compile)
     - [run deploy.js](#run-deployjs)
+      - [localhost network](#localhost-network)
 - [Chain used](#chain-used)
 - [Documentation](#documentation)
 -------------------------------------------------------
@@ -43,19 +44,23 @@ node deploy.js
 
 # nvm config 
 file .nvmrc contains the nodejs version to use for this project. => 18
-```
-nvm use
-```
+`nvm use`
 you need to have nvm installed.
 
 # Deployment with Hardhat
 ### help
-yarn hardhat help
+`yarn hardhat help`
 ### Compile
-yarn hardhat compile
+`yarn hardhat compile`
 ### run deploy.js
-yarn hardhat run scripts/deploy.js [--network hardhat] //Deploys to in-process hardhat network.
-yarn hardhat run scripts/deploy.js --network sepolia //Deploys to ETH testnet Sepolia.
+`yarn hardhat run scripts/deploy.js [--network hardhat]` //Deploys to in-process hardhat network.
+
+`yarn hardhat run scripts/deploy.js --network sepolia `//Deploys to ETH testnet Sepolia.
+
+#### localhost network
+`yarn hardhat node`
+
+`yarn hardhat run scripts/deploy.js --network localhost` //Deploys to localhost testnet.
 
 # Chain used
 Sepolia ETH. Connecting with endpoint from Alchemy (https://www.alchemy.com/chain-connect/endpoints/rpc-sepolia-sepolia)
