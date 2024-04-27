@@ -3,15 +3,27 @@ const networkName = network.name;
 const chainId = network.config.chainId;
 
 async function main() {
-    simpleStorage = await deployContract("SimpleStorage");
-    // fundMe = await deployContract("FundMe");
+    contracts = ["SimpleStorage", "FundMe"];
+    for (const c of contracts) {
+        contract = await deployContract(c);
+        if (
+            network.config.chainId === 11155111 &&
+            process.env.ETHERSCAN_API_KEY
+        ) {
+            console.log(
+                `[${networkName}-${chainId}] Waiting for block confirmations...`,
+            );
+            await contract.deploymentTransaction().wait(6);
+            await verify(contract.target, []);
+        }
+    }
 
     if (network.config.chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
         console.log(
             `[${networkName}-${chainId}] Waiting for block confirmations...`,
         );
-        await simpleStorage.deploymentTransaction().wait(6);
-        await verify(simpleStorage.target, []);
+        await contract.deploymentTransaction().wait(6);
+        await verify(contract.target, []);
     }
 }
 
