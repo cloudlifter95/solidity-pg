@@ -22,6 +22,8 @@ node deploy.js
 
 
 # Deployment with Hardhat
+### help
+yarn hardhat help
 ### Compile
 yarn hardhat compile
 ### run deploy.js
