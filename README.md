@@ -23,6 +23,7 @@ Table of content:
     - [run deploy.js](#run-deployjs)
       - [localhost network](#localhost-network)
     - [Debugging](#debugging)
+    - [test](#test)
     - [Clean](#clean)
 - [Chain used](#chain-used)
 - [Documentation](#documentation)
@@ -72,8 +73,13 @@ load js module: `.load ./scripts/deploy.js`
 
 function from deploy.js as example: `getTransactionFromTxHash('0x0f563feef2b7fa9b87fb50390457483b201707bb13450079681d7db1a3d36184')`
 
+### test
+`yarn hardhat test`
+`yarn hardhat test --grep store`
+
 ### Clean
 `yarn hardhat clean`
+
 
 # Chain used
 Sepolia ETH. Connecting with endpoint from Alchemy (https://www.alchemy.com/chain-connect/endpoints/rpc-sepolia-sepolia)
