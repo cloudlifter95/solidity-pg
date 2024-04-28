@@ -2,9 +2,10 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 require("@nomicfoundation/hardhat-verify");
 require("./tasks/block-number");
+require("hardhat-gas-reporter");
 
-const SEPOLIA_URL = process.env.RPC_URL;
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const SEPOLIA_URL = process.env.RPC_URL || "";
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -19,12 +20,19 @@ module.exports = {
         },
         localhost: {
             url: "http://127.0.0.1:8545/",
-            chainId: 31337
-        }
+            chainId: 31337,
+        },
     },
     etherscan: {
         apiKey: ETHERSCAN_API_KEY,
     },
+    gasReporter: {
+        enabled: true,
+        currency: "USD",
+        token: "ETH",
+        // outputFile: "gas-report.txt",
+        // noColors: true
+      },
 };
 task("accounts", "Prints the list of accounts", async () => {
     const accounts = await ethers.getSigners();

@@ -8,11 +8,15 @@ Code is inspired, copied, reworked from different sources, such as:
 
 - https://github.com/smartcontractkit/full-blockchain-solidity-course-js?tab=readme-ov-file#lesson-2-welcome-to-remix-simple-storage
 
+> [!Note]
+> check [this](https://github.com/PatrickAlphaC/hardhat-simple-storage-fcc)
+
 Table of content:
 ------------------------------------------------------
 
 - [solidity-pg](#solidity-pg)
   - [Table of content:](#table-of-content)
+- [Clone and validate local code](#clone-and-validate-local-code)
 - [Env variables](#env-variables)
 - [LEGACY - deployment help section (without hardhat)](#legacy---deployment-help-section-without-hardhat)
 - [Prettier reference config](#prettier-reference-config)
@@ -28,6 +32,14 @@ Table of content:
 - [Chain used](#chain-used)
 - [Documentation](#documentation)
 -------------------------------------------------------
+
+# Clone and validate local code
+- Clone this rep
+- Install dependencies
+- Set env file (see below)
+- Run mocha tests (see below)
+  - If all tests pass, you're good to go!
+  - If not, debug :D
 
 
 # Env variables
