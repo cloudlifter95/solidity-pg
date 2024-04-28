@@ -16,7 +16,7 @@ Table of content:
 
 - [solidity-pg](#solidity-pg)
   - [Table of content:](#table-of-content)
-- [Clone and validate local code](#clone-and-validate-local-code)
+- [Getting started](#getting-started)
 - [Env variables](#env-variables)
 - [LEGACY - deployment help section (without hardhat)](#legacy---deployment-help-section-without-hardhat)
 - [Prettier reference config](#prettier-reference-config)
@@ -35,7 +35,7 @@ Table of content:
 - [Documentation](#documentation)
 -------------------------------------------------------
 
-# Clone and validate local code
+# Getting started
 - Clone this rep
 - Install dependencies
 - Set env file (see below)
