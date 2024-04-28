@@ -3,6 +3,7 @@ require("dotenv").config();
 require("@nomicfoundation/hardhat-verify");
 require("./tasks/block-number");
 require("hardhat-gas-reporter");
+require("solidity-coverage");
 
 const SEPOLIA_URL = process.env.RPC_URL || "";
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
@@ -32,7 +33,7 @@ module.exports = {
         token: "ETH",
         // outputFile: "gas-report.txt",
         // noColors: true
-      },
+    },
 };
 task("accounts", "Prints the list of accounts", async () => {
     const accounts = await ethers.getSigners();

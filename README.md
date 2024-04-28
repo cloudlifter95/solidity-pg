@@ -28,6 +28,8 @@ Table of content:
       - [localhost network](#localhost-network)
     - [Debugging](#debugging)
     - [test](#test)
+    - [gas report](#gas-report)
+    - [security](#security)
     - [Clean](#clean)
 - [Chain used](#chain-used)
 - [Documentation](#documentation)
@@ -89,6 +91,15 @@ function from deploy.js as example: `getTransactionFromTxHash('0x0f563feef2b7fa9
 `yarn hardhat test`
 `yarn hardhat test --grep store`
 
+### gas report
+uses hardhat gas reporter package (see package.json)
+imported in hardhat config (hooked under test task)
+`yarn hardhat test`
+
+### security
+uses solidity-coverage package.
+imported in hardhat config (as task)
+`yarn hardhat coverage`
 ### Clean
 `yarn hardhat clean`
 

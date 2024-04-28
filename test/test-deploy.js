@@ -2,7 +2,7 @@ const { ethers } = require("hardhat")
 const { expect, assert } = require("chai")
 
 // describe("SimpleStorage", () => {})
-describe("SimpleStorage", function () {
+describe("Deploy-js", function () {
   // let simpleStorageFactory
   // let simpleStorage
   let simpleStorageFactory, simpleStorage
