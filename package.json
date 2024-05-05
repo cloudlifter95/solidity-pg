@@ -8,7 +8,13 @@
     "solc": "^0.8.25"
   },
   "scripts": {
-    "legacy_compile": "yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o ./out/ SimpleStorage.sol"
+    "legacy_compile": "yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o ./out/ SimpleStorage.sol",
+    "test": "hardhat test",
+    "test:staging": "hardhat test --network sepolia",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+    "format": "prettier --write .",
+    "coverage": "hardhat coverage"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",

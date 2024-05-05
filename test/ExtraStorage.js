@@ -17,6 +17,9 @@ describe("ExtraStorage", function () {
         await transactionResponse.wait(1);
 
         const currentValue = await extraStorage.retrieve();
-        assert.equal(currentValue.toString(), (parseInt(expectedValue)+5).toString());
+        assert.equal(
+            currentValue.toString(),
+            (parseInt(expectedValue) + 5).toString(),
+        );
     });
 });
